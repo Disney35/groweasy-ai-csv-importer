@@ -7,7 +7,30 @@ The application accepts CSV files with arbitrary column names and
 layouts, previews the raw data before processing, and uses Gemini AI to
 intelligently map each row into the required CRM format.
 
+## Live Application
+
+  ---------------------------------------------------------------------------------------------------
+  Service                             URL
+  ----------------------------------- ---------------------------------------------------------------
+  Live Frontend                       https://groweasy-ai-csv-importer-delta.vercel.app
+
+  Live Backend                        https://groweasy-ai-csv-importer-vscm.onrender.com
+
+  Backend Health Check                https://groweasy-ai-csv-importer-vscm.onrender.com/api/health
+
+  GitHub Repository                   https://github.com/Disney35/groweasy-ai-csv-importer
+  ---------------------------------------------------------------------------------------------------
+
+> The backend is hosted on Render's free tier. The first request may
+> take longer if the service has been inactive and needs to wake up.
+
 ## Application Screenshots
+
+### Production AI Results
+
+The complete deployed workflow has been successfully tested end to end.
+
+![Production AI Results](screenshots/09-production-ai-results.png)
 
 ### Backend Production Build
 
@@ -332,11 +355,14 @@ is marked as failed.
 
 -   Vitest
 
-### DevOps
+### DevOps and Deployment
 
 -   Docker
 -   Docker Compose
 -   Multi-stage Docker builds
+-   Vercel
+-   Render
+-   GitHub
 
 ## Project Structure
 
@@ -382,7 +408,8 @@ groweasy-ai-csv-importer/
 │   ├── 05-upload-light.png
 │   ├── 06-csv-preview.png
 │   ├── 07-ai-processing.png
-│   └── 08-import-results.png
+│   ├── 08-import-results.png
+│   └── 09-production-ai-results.png
 │
 ├── docker-compose.yml
 ├── .gitignore
@@ -404,7 +431,7 @@ A Gemini API key is required for AI extraction.
 ### Clone the Repository
 
 ``` bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Disney35/groweasy-ai-csv-importer.git
 cd groweasy-ai-csv-importer
 ```
 
@@ -478,6 +505,67 @@ Open:
 ``` text
 http://localhost:3000
 ```
+
+## Production Deployment
+
+### Frontend --- Vercel
+
+The Next.js frontend is deployed on Vercel:
+
+``` text
+https://groweasy-ai-csv-importer-delta.vercel.app
+```
+
+Production environment variable:
+
+``` env
+NEXT_PUBLIC_API_URL=https://groweasy-ai-csv-importer-vscm.onrender.com
+```
+
+### Backend --- Render
+
+The Express backend is deployed on Render:
+
+``` text
+https://groweasy-ai-csv-importer-vscm.onrender.com
+```
+
+Health endpoint:
+
+``` text
+https://groweasy-ai-csv-importer-vscm.onrender.com/api/health
+```
+
+The production backend accepts requests from the deployed Vercel
+frontend.
+
+> The Render free instance may spin down after inactivity, so the first
+> request can take longer than normal.
+
+## Production Verification
+
+The complete deployed workflow has been successfully tested:
+
+1.  Open the live Vercel frontend.
+2.  Upload a messy CSV file.
+3.  Preview the original CSV data.
+4.  Confirm AI processing.
+5.  Send records to the deployed Render backend.
+6.  Process records with Gemini AI.
+7.  Validate the structured AI response.
+8.  Display imported and skipped CRM records.
+9.  Show final import statistics and success rate.
+
+The production test successfully processed:
+
+-   **6 total rows**
+-   **5 imported CRM records**
+-   **1 skipped record**
+-   **83% success rate**
+
+Production evidence:
+
+![Production AI Results](screenshots/09-production-ai-results.png)
 
 ## Production Build
 
@@ -649,7 +737,10 @@ The project includes:
 -   Docker images
 -   Docker Compose
 -   responsive UI
--   dark mode
+-   dark and light modes
+-   deployed frontend
+-   deployed backend
+-   production-tested Gemini AI workflow
 
 ## Future Improvements
 

@@ -1,0 +1,6 @@
+Full_Name,Contact_Number,Mail_ID,Business,City,Customer_Status,Customer_Note,Ad_Source
+Ravi Teja,9876543210,ravi@gmail.com,RT Technologies,Vijayawada,Hot Lead,Asked for product demo,Google Ads
+Sneha Rao,+91 99887 76655,sneha@gmail.com,Rao Interiors,Hyderabad,Closed,Customer purchased the service,Instagram
+Kiran Kumar,9123456789,,KK Enterprises,Chennai,No Answer,Call again next week,Facebook
+Pooja Verma,,pooja@gmail.com,Verma Solutions,Pune,Not Interested,Customer rejected the offer,Website
+Bad Record,,,Unknown Company,Delhi,New,No contact information,Manual

@@ -1,0 +1,6 @@
+Customer Full Name,WhatsApp No,Email Address,Organisation,Location,Lead Stage,Remarks,Campaign
+John Doe,919876543210,john@example.com,GrowEasy,"Mumbai, Maharashtra",Interested,Call again tomorrow,Facebook Ads
+Sarah Johnson,+91 98765 43211,sarah@example.com,Tech Solutions,"Bangalore, Karnataka",Not Connected,Customer was busy,Google Campaign
+Rajesh Patel,9876543212,,Startup Inc,"Delhi, Delhi",Not Interested,Does not need the service,Agency Export
+Priya Singh,,priya@example.com,Enterprise Corp,"Pune, Maharashtra",Converted,Deal completed successfully,Website
+Invalid Person,,,Unknown Company,Chennai,New,No contact information,Manual Entry
